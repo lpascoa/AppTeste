@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ProjetoTeste.MVC.ViewModels.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeNumber)
+        </th>
+        <th>
+            @Html.DisplayName("Cliente")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.FirstName)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.Surname)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.Email)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.DateOfBirth)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.Department)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.Status)
+    </th>
+    <th>
+        @Html.DisplayNameFor(modelItem => item.EmployeeNumber)
+    </th>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
+    </td>
+</tr>
+}
+
+</table>
